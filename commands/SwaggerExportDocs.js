@@ -17,7 +17,7 @@ class SwaggerExportDocs extends Command {
 
   async handle (args, options) {
     if (!options.silent) this.info('Exporting assets to public folder (public/docs)')
-    await this.copy(path.join(__dirname, '../node_modules/swagger-ui-dist'), 'public/docs')
+    await this.copy('./node_modules/swagger-ui-dist', 'public/docs')
 
     if (!options.silent) this.success(`${this.icon('success')} Completed`)
   }
