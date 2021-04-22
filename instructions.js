@@ -7,7 +7,7 @@ module.exports = async function (cli) {
     await cli.makeConfig('swagger.js', path.join(__dirname, './templates/config.js'))
     cli.command.completed('create', 'config/swagger.js')
 
-    await cli.copy(path.join(__dirname, './templates/docs'), 'public/docs')
+    await cli.copy('./node_modules/swagger-ui-dist', 'public/docs')
     cli.command.completed('copy assets', 'public/docs')
   } catch (error) {
     // ignore errors
