@@ -4,46 +4,31 @@ module.exports = {
   /*
   |--------------------------------------------------------------------------
   | Swagger Information
-  | Please use Swagger 2 Spesification Docs
-  | https://swagger.io/docs/specification/2-0/basic-structure/
+  | Please use Swagger Spesification Docs
+  | https://swagger.io/docs/specification/basic-structure/
   |--------------------------------------------------------------------------
   */
 
   enable: true,
-  specUrl: '/swagger.json',
-
   options: {
-    swaggerDefinition: {
+    definition: {
+      openapi: '3.0.0',
       info: {
         title: 'Adonis 💘 Swagger',
         version: '1.0.0',
+        description: 'Describe your API 🚀'
       },
-  
-      basePath: '/',
-
+      servers: [
+        {url: 'http://localhost:3333/', description: 'Local'},
+        {url: 'http://localhost:3030/', description: 'Development'}
+      ],
       // Example security definitions.
-      securityDefinitions: {
-        ApiKey: {
-          description: 'ApiKey description',
-          name: 'Authorization'
-        },
-
-        // OAuth2 configuration
-        OAuth2: {
-          authorizationUrl: 'https://example.com/oauth/authorize',
-          tokenUrl: 'https://example.com/oauth/token',
-
-          // define your scopes here
-          // remove read, write and admin if not necessary
-          scopes: {
-            read: 'Grants read access (this is just sample)',
-            write: 'Grants write access (this is just sample)',
-            admin: 'Grants read and write access to administrative information (this is just sample)'
-          }
-        },
-      }
+      security:[
+        {
+          bearerAuth: []
+        }
+      ]
     },
-
     // Path to the API docs
     // Sample usage
     // apis: [
