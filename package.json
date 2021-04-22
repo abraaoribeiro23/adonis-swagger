@@ -18,8 +18,8 @@
   "author": "Ahmad Arif <ahmad.arif019@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "swagger-ui-dist": "3.31.1",
-    "swagger-jsdoc": "^5.0.0"
+    "swagger-ui-dist": "^3.47.1",
+    "swagger-jsdoc": "^6.0.0"
   },
   "repository": {
     "type": "git",
