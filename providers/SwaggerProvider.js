@@ -10,7 +10,7 @@ class SwaggerProvider extends ServiceProvider {
 
     if (Config.get('swagger.enable')) {
       // Get custom URL for Swagger specification, if defined.
-      const specUrl = Config.get('swagger.specUrl', '/swagger.json')
+      const specUrl = Config.get('swagger.specUrl', '/swagger1.json')
       Route.get(specUrl, async ({ response }) => (
         swaggerJSDoc(Config.get('swagger.options', {}))
       ))
